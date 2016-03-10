@@ -20,6 +20,12 @@ namespace HelloClient.RemoteHelloReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/SayHello", ReplyAction="http://tempuri.org/IHelloService/SayHelloResponse")]
         System.Threading.Tasks.Task<string> SayHelloAsync(string s);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/GetNameID", ReplyAction="http://tempuri.org/IHelloService/GetNameIDResponse")]
+        string GetNameID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/GetNameID", ReplyAction="http://tempuri.org/IHelloService/GetNameIDResponse")]
+        System.Threading.Tasks.Task<string> GetNameIDAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace HelloClient.RemoteHelloReference {
         
         public System.Threading.Tasks.Task<string> SayHelloAsync(string s) {
             return base.Channel.SayHelloAsync(s);
+        }
+        
+        public string GetNameID(int id) {
+            return base.Channel.GetNameID(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetNameIDAsync(int id) {
+            return base.Channel.GetNameIDAsync(id);
         }
     }
 }

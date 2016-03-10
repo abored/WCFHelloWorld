@@ -7,5 +7,8 @@ namespace WcfHelloService
     {
         [OperationContract]
         string SayHello(string s);
+
+        [OperationContract]
+        string GetNameID(int id);
     }
 }

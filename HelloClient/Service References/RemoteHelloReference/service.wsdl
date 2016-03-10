@@ -12,16 +12,35 @@
   <wsdl:message name="IHelloService_SayHello_OutputMessage">
     <wsdl:part name="parameters" element="tns:SayHelloResponse" />
   </wsdl:message>
+  <wsdl:message name="IHelloService_GetNameID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameID" />
+  </wsdl:message>
+  <wsdl:message name="IHelloService_GetNameID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHelloService">
     <wsdl:operation name="SayHello">
       <wsdl:input wsaw:Action="http://tempuri.org/IHelloService/SayHello" message="tns:IHelloService_SayHello_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHelloService/SayHelloResponse" message="tns:IHelloService_SayHello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHelloService/GetNameID" message="tns:IHelloService_GetNameID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHelloService/GetNameIDResponse" message="tns:IHelloService_GetNameID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHelloService" type="tns:IHelloService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="SayHello">
       <soap:operation soapAction="http://tempuri.org/IHelloService/SayHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameID">
+      <soap:operation soapAction="http://tempuri.org/IHelloService/GetNameID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
