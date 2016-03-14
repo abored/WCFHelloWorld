@@ -9,7 +9,86 @@
 //------------------------------------------------------------------------------
 
 namespace HelloClient.RemoteHelloReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TripleOfInt", Namespace="http://schemas.datacontract.org/2004/07/HelloServer")]
+    [System.SerializableAttribute()]
+    public partial class TripleOfInt : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int I1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int I2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int I3Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int I1 {
+            get {
+                return this.I1Field;
+            }
+            set {
+                if ((this.I1Field.Equals(value) != true)) {
+                    this.I1Field = value;
+                    this.RaisePropertyChanged("I1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int I2 {
+            get {
+                return this.I2Field;
+            }
+            set {
+                if ((this.I2Field.Equals(value) != true)) {
+                    this.I2Field = value;
+                    this.RaisePropertyChanged("I2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int I3 {
+            get {
+                return this.I3Field;
+            }
+            set {
+                if ((this.I3Field.Equals(value) != true)) {
+                    this.I3Field = value;
+                    this.RaisePropertyChanged("I3");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RemoteHelloReference.IHelloService")]
@@ -26,6 +105,12 @@ namespace HelloClient.RemoteHelloReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/GetNameID", ReplyAction="http://tempuri.org/IHelloService/GetNameIDResponse")]
         System.Threading.Tasks.Task<string> GetNameIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/addTriple", ReplyAction="http://tempuri.org/IHelloService/addTripleResponse")]
+        HelloClient.RemoteHelloReference.TripleOfInt addTriple(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/addTriple", ReplyAction="http://tempuri.org/IHelloService/addTripleResponse")]
+        System.Threading.Tasks.Task<HelloClient.RemoteHelloReference.TripleOfInt> addTripleAsync(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +154,14 @@ namespace HelloClient.RemoteHelloReference {
         
         public System.Threading.Tasks.Task<string> GetNameIDAsync(int id) {
             return base.Channel.GetNameIDAsync(id);
+        }
+        
+        public HelloClient.RemoteHelloReference.TripleOfInt addTriple(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2) {
+            return base.Channel.addTriple(t1, t2);
+        }
+        
+        public System.Threading.Tasks.Task<HelloClient.RemoteHelloReference.TripleOfInt> addTripleAsync(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2) {
+            return base.Channel.addTripleAsync(t1, t2);
         }
     }
 }

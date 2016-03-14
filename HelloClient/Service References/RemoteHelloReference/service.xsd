@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/HelloServer" />
   <xs:element name="SayHello">
     <xs:complexType>
       <xs:sequence>
@@ -25,6 +26,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetNameIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTriple">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/HelloServer" minOccurs="0" name="t1" nillable="true" type="q1:TripleOfInt" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/HelloServer" minOccurs="0" name="t2" nillable="true" type="q2:TripleOfInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTripleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/HelloServer" minOccurs="0" name="addTripleResult" nillable="true" type="q3:TripleOfInt" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

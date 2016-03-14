@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\RemoteHelloReference\HelloClient.RemoteHelloReference.TripleOfInt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteHelloReference\HelloServer.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\RemoteHelloReference\service.wsdl" />
     <None Include="Service References\RemoteHelloReference\service.xsd">
       <SubType>Designer</SubType>

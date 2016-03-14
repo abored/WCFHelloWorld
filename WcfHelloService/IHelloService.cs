@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using HelloServer;
 
 namespace WcfHelloService
 {
@@ -10,5 +11,8 @@ namespace WcfHelloService
 
         [OperationContract]
         string GetNameID(int id);
+
+        [OperationContract]
+        TripleOfInt addTriple(TripleOfInt t1, TripleOfInt t2);
     }
 }
