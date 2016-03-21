@@ -6,7 +6,7 @@ namespace WcfHelloService
     [ServiceContract]
     public interface IHelloService
     {
-        [OperationContract]
+        [OperationContract] 
         string SayHello(string s);
 
         [OperationContract]
