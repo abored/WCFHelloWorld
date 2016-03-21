@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using HelloClient.RemoteHelloReference;
+using HelloClient.ServiceReference1;
 
 namespace HelloClient
 {
     class Program
     {
-        static RemoteHelloReference.IHelloService helloObj = new RemoteHelloReference.HelloServiceClient();
+        static ServiceReference1.IHelloService helloObj = new HelloServiceClient();
 
         static void Main(string[] args)
         {

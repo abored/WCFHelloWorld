@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HelloClient.RemoteHelloReference {
+namespace HelloClient.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -91,7 +91,7 @@ namespace HelloClient.RemoteHelloReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RemoteHelloReference.IHelloService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IHelloService")]
     public interface IHelloService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/SayHello", ReplyAction="http://tempuri.org/IHelloService/SayHelloResponse")]
@@ -107,19 +107,19 @@ namespace HelloClient.RemoteHelloReference {
         System.Threading.Tasks.Task<string> GetNameIDAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/addTriple", ReplyAction="http://tempuri.org/IHelloService/addTripleResponse")]
-        HelloClient.RemoteHelloReference.TripleOfInt addTriple(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2);
+        HelloClient.ServiceReference1.TripleOfInt addTriple(HelloClient.ServiceReference1.TripleOfInt t1, HelloClient.ServiceReference1.TripleOfInt t2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloService/addTriple", ReplyAction="http://tempuri.org/IHelloService/addTripleResponse")]
-        System.Threading.Tasks.Task<HelloClient.RemoteHelloReference.TripleOfInt> addTripleAsync(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2);
+        System.Threading.Tasks.Task<HelloClient.ServiceReference1.TripleOfInt> addTripleAsync(HelloClient.ServiceReference1.TripleOfInt t1, HelloClient.ServiceReference1.TripleOfInt t2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IHelloServiceChannel : HelloClient.RemoteHelloReference.IHelloService, System.ServiceModel.IClientChannel {
+    public interface IHelloServiceChannel : HelloClient.ServiceReference1.IHelloService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class HelloServiceClient : System.ServiceModel.ClientBase<HelloClient.RemoteHelloReference.IHelloService>, HelloClient.RemoteHelloReference.IHelloService {
+    public partial class HelloServiceClient : System.ServiceModel.ClientBase<HelloClient.ServiceReference1.IHelloService>, HelloClient.ServiceReference1.IHelloService {
         
         public HelloServiceClient() {
         }
@@ -156,11 +156,11 @@ namespace HelloClient.RemoteHelloReference {
             return base.Channel.GetNameIDAsync(id);
         }
         
-        public HelloClient.RemoteHelloReference.TripleOfInt addTriple(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2) {
+        public HelloClient.ServiceReference1.TripleOfInt addTriple(HelloClient.ServiceReference1.TripleOfInt t1, HelloClient.ServiceReference1.TripleOfInt t2) {
             return base.Channel.addTriple(t1, t2);
         }
         
-        public System.Threading.Tasks.Task<HelloClient.RemoteHelloReference.TripleOfInt> addTripleAsync(HelloClient.RemoteHelloReference.TripleOfInt t1, HelloClient.RemoteHelloReference.TripleOfInt t2) {
+        public System.Threading.Tasks.Task<HelloClient.ServiceReference1.TripleOfInt> addTripleAsync(HelloClient.ServiceReference1.TripleOfInt t1, HelloClient.ServiceReference1.TripleOfInt t2) {
             return base.Channel.addTripleAsync(t1, t2);
         }
     }
